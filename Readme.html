@@ -1,1 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vastu Mitra Device</title>
 
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        color: #e2e8f0;
+        overflow-x: hidden;
+    }
+
+    /* 🧭 BACKGROUND COMPASS */
+    .bg {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background: url('compass-bg.jpg') center/cover no-repeat;
+        filter: brightness(0.35) contrast(1.1);
+        z-index: -2;
+    }
+
+    /* 🌌 DARK OVERLAY */
+    .overlay {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background: radial-gradient(circle, rgba(15,23,42,0.6), rgba(0,0,0,0.9));
+        z-index: -1;
+    }
+
+    /* ✨ DIVINE SHINE EFFECT */
+    .shine {
+        position: fixed;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(255,215,0,0.08), transparent 60%);
+        animation: moveGlow 6s infinite alternate;
+        z-index: -1;
+    }
+
+    @keyframes moveGlow {
+        0% { transform: translate(-20%, -20%) scale(1); }
+        100% { transform: translate(10%, 10%) scale(1.2); }
+    }
+
+    /* CONTENT */
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        text-align: center;
+        color: #38bdf8;
+        text-shadow: 0 0 10px rgba(56,189,248,0.5);
+    }
+
+    img.top {
+        width: 100%;
+        max-height: 250px;
+        object-fit: cover;
+        border-radius: 12px;
+        margin-bottom: 15px;
+        box-shadow: 0 0 20px rgba(255,255,255,0.1);
+    }
+
+    .box {
+        background: rgba(30,41,59,0.85);
+        padding: 15px;
+        border-radius: 12px;
+        margin-bottom: 20px;
+        backdrop-filter: blur(6px);
+        box-shadow: 0 0 15px rgba(0,0,0,0.4);
+    }
+
+    h2 {
+        color: #22c55e;
+    }
+
+    .divider {
+        border-top: 1px solid rgba(148,163,184,0.3);
+        margin: 15px 0;
+    }
+
+    ul {
+        padding-left: 20px;
+    }
+
+    .highlight {
+        color: #fbbf24;
+    }
+</style>
+</head>
+
+<body>
+
+<!-- BACKGROUND -->
+<div class="bg"></div>
+<div class="overlay"></div>
+<div class="shine"></div>
+
+<div class="container">
+
+<!-- VASTU GOD IMAGE -->
+<img class="top" src="vastu.jpg" alt="Vastu Purusha">
+
+<h1>VASTU MITRA DEVICE</h1>
+
+<div class="box">
+
+<h2>CORE FEATURES</h2>
+<ul>
+<li>8 Direction Digital Compass System (HMC5883L)</li>
+<li>0°–360° real-time heading detection</li>
+<li>India magnetic declination correction (~13°)</li>
+<li>N, NE, E, SE, S, SW, W, NW mapping</li>
+</ul>
+
+<div class="divider"></div>
+
+<h2>VOICE SYSTEM</h2>
+<ul>
+<li>DFPlayer Mini audio guidance</li>
+<li>Direction + degree voice output</li>
+<li>Startup + scan + hold voice system</li>
+</ul>
+
+<div class="divider"></div>
+
+<h2>CONTROL SYSTEM</h2>
+<p class="highlight">BTN2 → Scan / Hold</p>
+<p class="highlight">BTN1 → Detail Info Mode</p>
+<p class="highlight">BTN3 → Manual Direction Cycle</p>
+
+<div class="divider"></div>
+
+<h2>LED + BATTERY SYSTEM</h2>
+<ul>
+<li>Color-coded compass directions</li>
+<li>Battery indicator LED (Green/Blue/Yellow/Red)</li>
+<li>Low battery warning at 3.7V</li>
+<li>Critical cutoff at 3.5V</li>
+</ul>
+
+<div class="divider"></div>
+
+<h2>SYSTEM MODES</h2>
+<ul>
+<li>IDLE</li>
+<li>SCANNING</li>
+<li>HOLD_DIRECTION</li>
+</ul>
+
+</div>
+
+</div>
+
+</body>
+</html>
