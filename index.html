@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,92 +7,74 @@
 <title>Vastu Mitra Device</title>
 
 <style>
-    body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        color: #e2e8f0;
-        overflow-x: hidden;
-    }
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #e2e8f0;
+}
 
-    /* 🧭 BACKGROUND COMPASS */
-    .bg {
-        position: fixed;
-        width: 100%;
-        height: 100%;
-        background: url('compass-bg.jpg') center/cover no-repeat;
-        filter: brightness(0.35) contrast(1.1);
-        z-index: -2;
-    }
+/* 🧿 BACKGROUND IMAGE */
+.bg {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: url('vastu.jpg') center/cover no-repeat;
+    filter: brightness(0.25);
+    z-index: -2;
+}
 
-    /* 🌌 DARK OVERLAY */
-    .overlay {
-        position: fixed;
-        width: 100%;
-        height: 100%;
-        background: radial-gradient(circle, rgba(15,23,42,0.6), rgba(0,0,0,0.9));
-        z-index: -1;
-    }
+/* DARK OVERLAY */
+.overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.65);
+    z-index: -1;
+}
 
-    /* ✨ DIVINE SHINE EFFECT */
-    .shine {
-        position: fixed;
-        width: 200%;
-        height: 200%;
-        background: radial-gradient(circle, rgba(255,215,0,0.08), transparent 60%);
-        animation: moveGlow 6s infinite alternate;
-        z-index: -1;
-    }
+/* 🕒 CLOCK */
+.clock {
+    position: sticky;
+    top: 0;
+    text-align: center;
+    padding: 10px;
+    font-size: 18px;
+    color: #38bdf8;
+    background: rgba(0,0,0,0.7);
+    z-index: 10;
+    backdrop-filter: blur(6px);
+}
 
-    @keyframes moveGlow {
-        0% { transform: translate(-20%, -20%) scale(1); }
-        100% { transform: translate(10%, 10%) scale(1.2); }
-    }
+.container {
+    padding: 20px;
+}
 
-    /* CONTENT */
-    .container {
-        padding: 20px;
-    }
+h1 {
+    text-align: center;
+    color: #38bdf8;
+    text-shadow: 0 0 10px rgba(56,189,248,0.4);
+}
 
-    h1 {
-        text-align: center;
-        color: #38bdf8;
-        text-shadow: 0 0 10px rgba(56,189,248,0.5);
-    }
+.box {
+    background: rgba(30,41,59,0.85);
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 12px;
+    backdrop-filter: blur(5px);
+}
 
-    img.top {
-        width: 100%;
-        max-height: 250px;
-        object-fit: cover;
-        border-radius: 12px;
-        margin-bottom: 15px;
-        box-shadow: 0 0 20px rgba(255,255,255,0.1);
-    }
+h2 {
+    color: #22c55e;
+}
 
-    .box {
-        background: rgba(30,41,59,0.85);
-        padding: 15px;
-        border-radius: 12px;
-        margin-bottom: 20px;
-        backdrop-filter: blur(6px);
-        box-shadow: 0 0 15px rgba(0,0,0,0.4);
-    }
+.divider {
+    border-top: 1px solid rgba(148,163,184,0.3);
+    margin: 15px 0;
+}
 
-    h2 {
-        color: #22c55e;
-    }
-
-    .divider {
-        border-top: 1px solid rgba(148,163,184,0.3);
-        margin: 15px 0;
-    }
-
-    ul {
-        padding-left: 20px;
-    }
-
-    .highlight {
-        color: #fbbf24;
-    }
+ul {
+    padding-left: 20px;
+}
 </style>
 </head>
 
@@ -100,12 +83,11 @@
 <!-- BACKGROUND -->
 <div class="bg"></div>
 <div class="overlay"></div>
-<div class="shine"></div>
+
+<!-- CLOCK -->
+<div class="clock" id="clock">Loading time...</div>
 
 <div class="container">
-
-<!-- VASTU GOD IMAGE -->
-<img class="top" src="vastu.jpg" alt="Vastu Purusha">
 
 <h1>VASTU MITRA DEVICE</h1>
 
@@ -114,49 +96,95 @@
 <h2>CORE FEATURES</h2>
 <ul>
 <li>8 Direction Digital Compass System (HMC5883L)</li>
-<li>0°–360° real-time heading detection</li>
+<li>Real-time heading detection (0° to 360°)</li>
 <li>India magnetic declination correction (~13°)</li>
-<li>N, NE, E, SE, S, SW, W, NW mapping</li>
+<li>Stable direction mapping: N, NE, E, SE, S, SW, W, NW</li>
 </ul>
 
 <div class="divider"></div>
 
-<h2>VOICE SYSTEM</h2>
+<h2>VOICE SYSTEM (DFPLAYER MINI)</h2>
 <ul>
-<li>DFPlayer Mini audio guidance</li>
-<li>Direction + degree voice output</li>
-<li>Startup + scan + hold voice system</li>
+<li>Audio-based navigation guidance system</li>
+<li>Direction announcement (North, East, etc.)</li>
+<li>Degree-wise voice output (0–360 mapping)</li>
+<li>Startup & scan voice feedback</li>
+<li>Hold mode voice support</li>
 </ul>
 
 <div class="divider"></div>
 
 <h2>CONTROL SYSTEM</h2>
-<p class="highlight">BTN2 → Scan / Hold</p>
-<p class="highlight">BTN1 → Detail Info Mode</p>
-<p class="highlight">BTN3 → Manual Direction Cycle</p>
+<ul>
+<li>BTN1 → Detail Info Mode</li>
+<li>BTN2 → Scan / Hold Mode</li>
+<li>BTN3 → Manual Direction Cycle</li>
+</ul>
 
 <div class="divider"></div>
 
-<h2>LED + BATTERY SYSTEM</h2>
+<h2>LED & BATTERY SYSTEM</h2>
 <ul>
-<li>Color-coded compass directions</li>
-<li>Battery indicator LED (Green/Blue/Yellow/Red)</li>
-<li>Low battery warning at 3.7V</li>
-<li>Critical cutoff at 3.5V</li>
+<li>WS2812 direction color indication system</li>
+<li>Battery monitoring via ADC</li>
+<li>Low battery warning (3.7V)</li>
+<li>Auto shutdown (3.5V safety limit)</li>
 </ul>
 
 <div class="divider"></div>
 
 <h2>SYSTEM MODES</h2>
 <ul>
-<li>IDLE</li>
-<li>SCANNING</li>
-<li>HOLD_DIRECTION</li>
+<li>IDLE MODE</li>
+<li>SCANNING MODE</li>
+<li>HOLD DIRECTION MODE</li>
+</ul>
+
+<div class="divider"></div>
+
+<h2>SMART FEATURES</h2>
+<ul>
+<li>Auto idle detection (10s)</li>
+<li>Watchdog auto recovery system</li>
+<li>Button debounce protection</li>
+<li>Non-blocking firmware design</li>
+</ul>
+
+<div class="divider"></div>
+
+<h2>HARDWARE USED</h2>
+<ul>
+<li>Arduino / AVR Microcontroller</li>
+<li>HMC5883L Compass Sensor</li>
+<li>DFPlayer Mini Module</li>
+<li>WS2812 RGB LEDs</li>
+<li>Battery sensing circuit</li>
+</ul>
+
+<div class="divider"></div>
+
+<h2>MANUFACTURING INFO</h2>
+<ul>
+<li>Product: Vastu Mitra Smart Compass Device</li>
+<li>Designed & Developed by: Sayan Tripathi</li>
+<li>Manufacturing Date: 01/06/2026</li>
+<li>Support Duration: 3 Months</li>
 </ul>
 
 </div>
 
 </div>
+
+<!-- CLOCK SCRIPT -->
+<script>
+function updateClock() {
+    const now = new Date();
+    document.getElementById("clock").innerHTML =
+        "🕒 Current Time: " + now.toLocaleTimeString();
+}
+setInterval(updateClock, 1000);
+updateClock();
+</script>
 
 </body>
 </html>
